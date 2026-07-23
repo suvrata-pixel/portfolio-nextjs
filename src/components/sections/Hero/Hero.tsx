@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="max-w-4xl mx-auto px-6 min-h-screen flex flex-col justify-center gap-6 bg-[#F5F0FF]">
+    <section id="hero" className="max-w-4xl mx-auto px-6 min-h-screen flex flex-col justify-center gap-6 bg-[#F5F0FF]">
       <h1 className="text-5xl font-bold"> I'm Suvrata G A </h1>
 
       <p className="text-lg">
