@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section id="hero" className="max-w-4xl mx-auto px-6 py-20 flex flex-col gap-6 bg-[#FAF8FF]">
+    <section id="about" className="max-w-4xl mx-auto px-6 py-20 flex flex-col gap-6 bg-[#FAF8FF]">
       <h2 className="text-3xl font-bold"> From Physics to Full Stack </h2>
 
       <p className="text-lg leading-7">
