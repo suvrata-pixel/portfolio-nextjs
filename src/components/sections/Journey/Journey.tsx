@@ -17,31 +17,31 @@ const journey: JourneyItem[] = [
   {
     year: "2014",
     title: "M.Sc. Physics",
-    institution: "Institution Name",
+    institution: "St. Aloysius College, Mangalore",
     icon: GraduationCap,
   },
   {
     year: "2017",
     title: "Data Indexing",
-    institution: "Company Name",
+    institution: "Molecular Connections Pvt Ltd, Bangalore",
     icon: Briefcase,
   },
   {
     year: "2019 – 2021",
     title: "B.Ed.",
-    institution: "Institution Name",
+    institution: "MCCTE, Mahe",
     icon: GraduationCap,
   },
   {
     year: "2023",
     title: "Mathematics Teacher",
-    institution: "School Name",
+    institution: "St. Anne's High School, Bangalore",
     icon: BookOpen,
   },
   {
     year: "2024",
     title: "Online Mathematics Tutor",
-    institution: "Company Name",
+    institution: "Angle BeLearn Pvt Ltd",
     icon: BookOpen,
   },
   {
@@ -83,9 +83,9 @@ export default function Journey() {
 
         
         <div className="overflow-x-auto pb-6">
-          <div className="relative flex min-w-[1450px] items-start justify-between px-8 pt-8">
+          <div className="relative flex min-w-[1200px] items-start justify-between px-6 pt-8 sm:min-w-[1450px] sm:px-8">
             
-            <div className="absolute left-8 right-8 top-[3.25rem] h-px bg-violet-200" />
+            <div className="absolute left-6 right-6 top-[3.25rem] h-px bg-violet-200 sm:left-8 sm:right-8" />
 
             {journey.map((item) => {
               const Icon = item.icon;
@@ -125,6 +125,11 @@ export default function Journey() {
             })}
           </div>
         </div>
+
+            <p className="text-center text-xs text-gray-400 sm:hidden">
+              Swipe to explore my journey
+            </p>
+
       </div>
     </section>
   );

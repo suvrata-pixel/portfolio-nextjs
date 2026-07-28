@@ -2,12 +2,11 @@ export default function Footer() {
   return (
     <footer
       id="footer"
-      className="px-6 py-10"
+      className="border-t border-violet-100 bg-[#FAF9FF] px-6 py-12"
     >
-      <div className="max-w-6xl mx-auto flex flex-col items-center gap-4 text-center">
-
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 text-center">
         
-        <p className="text-lg font-medium tracking-wide text-gray-800">
+        <p className="text-lg font-medium italic tracking-wide text-gray-800">
           Rooted in Science. Driven by Code.
         </p>
 
@@ -20,7 +19,6 @@ export default function Footer() {
         <p className="text-sm text-gray-500">
           Built with Next.js & Tailwind CSS.
         </p>
-
       </div>
     </footer>
   );

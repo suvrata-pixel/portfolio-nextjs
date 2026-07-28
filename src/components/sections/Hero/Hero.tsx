@@ -13,11 +13,11 @@ export default function Hero() {
             Hello, I'm
           </p>
 
-          <h1 className="text-5xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:text-7xl">
+          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:text-7xl">
             Suvrata G A
           </h1>
 
-          <p className="max-w-2xl text-xl leading-8 text-gray-600 sm:text-2xl">
+          <p className="max-w-2xl text-lg leading-8 text-gray-600 sm:text-2xl">
             Full Stack Developer | Physics Graduate | Continuous Explorer
           </p>
 

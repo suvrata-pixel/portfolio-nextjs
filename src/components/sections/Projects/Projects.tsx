@@ -1,3 +1,5 @@
+import { ExternalLink } from "lucide-react";
+import { siGithub } from "simple-icons";
 import Image from "next/image";
 
 type Project = {
@@ -86,37 +88,52 @@ export default function Projects() {
           {projects.map((project) => (
             <article
               key={project.title}
-              className="group flex flex-col gap-6 rounded-3xl border border-white/70 bg-white/55 p-6 shadow-[0_8px_32px_rgba(76,29,149,0.06)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_16px_40px_rgba(76,29,149,0.12)] sm:p-8"
+              className="group flex flex-col gap-6 rounded-3xl border border-white/70 bg-white/55 p-5 shadow-[0_8px_32px_rgba(76,29,149,0.06)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_16px_40px_rgba(76,29,149,0.12)] sm:p-8"
             >
 
               
-              <div className="relative aspect-video overflow-hidden rounded-2xl bg-[#EDE9FE]">
+              <div className="overflow-hidden rounded-2xl border border-white/70 bg-white/60 shadow-sm">
 
-                {project.image ? (
-                  <Image
-                    src={project.image}
-                    alt={`${project.title} project preview`}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                ) : (
-                  <div className="flex h-full items-center justify-center">
-                    <span className="text-sm font-medium text-violet-500">
-                      Project Preview
-                    </span>
-                  </div>
-                )}
+                
+                <div className="flex items-center gap-2 border-b border-gray-200/70 bg-white/70 px-3 py-2.5 sm:px-4 sm:py-3">
+                  <span className="h-2.5 w-2.5 rounded-full bg-red-300" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-yellow-300" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-green-300" />
+                </div>
 
+                
+                <div className="relative aspect-video overflow-hidden bg-[#EDE9FE]">
+                  {project.image ? (
+                    <Image
+                      src={project.image}
+                      alt={`${project.title} project preview`}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  ) : (
+                    <div className="flex h-full flex-col items-center justify-center gap-2">
+                      <span className="text-sm font-semibold text-violet-600">
+                        Coming Soon
+                      </span>
+
+                      <span className="text-xs text-gray-500">
+                        Project in progress
+                      </span>
+                    </div>
+                  )}
+                </div>
               </div>
 
               
               <div className="flex flex-col gap-4">
 
-                <h3 className="text-2xl font-semibold tracking-tight text-gray-900">
+                
+                <h3 className="text-xl font-semibold tracking-tight text-gray-900 transition-colors duration-300 group-hover:text-violet-700 sm:text-2xl">
                   {project.title}
                 </h3>
 
+                
                 <p className="leading-7 text-gray-600">
                   {project.description}
                 </p>
@@ -136,33 +153,54 @@ export default function Projects() {
                 )}
 
                 
-                <div className="flex flex-wrap gap-3 pt-2">
+                {(project.github || project.liveDemo) && (
+                  <div className="flex flex-wrap gap-3 pt-2">
 
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="rounded-full border border-gray-200 bg-white/70 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:border-violet-300 hover:text-violet-600"
-                    >
-                      GitHub
-                    </a>
-                  )}
+                    
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white/70 px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-300 hover:-translate-y-1 hover:border-violet-300 hover:text-violet-600"
+                      >
+                        <svg
+                          role="img"
+                          aria-label="GitHub"
+                          viewBox="0 0 24 24"
+                          className="h-4 w-4"
+                        >
+                          <path
+                            d={siGithub.path}
+                            fill={`#${siGithub.hex}`}
+                          />
+                        </svg>
 
-                  {project.liveDemo && (
-                    <a
-                      href={project.liveDemo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="rounded-full bg-violet-600 px-4 py-2 text-sm font-medium text-white transition-all hover:bg-violet-700"
-                    >
-                      Live Demo
-                    </a>
-                  )}
+                        Source Code
+                      </a>
+                    )}
 
-                </div>
+                    
+                    {project.liveDemo && (
+                      <a
+                        href={project.liveDemo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-full bg-violet-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-violet-700 hover:shadow-md"
+                      >
+                        Live Demo
+
+                        <ExternalLink
+                          size={16}
+                          strokeWidth={2}
+                        />
+                      </a>
+                    )}
+
+                  </div>
+                )}
+
               </div>
-
             </article>
           ))}
         </div>

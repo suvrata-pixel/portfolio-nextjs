@@ -41,7 +41,7 @@ export default function BeyondCode() {
           </div>
 
           
-          <div className="space-y-7 text-[17px] leading-8 text-gray-700">
+          <div className="space-y-7 text-[16px] leading-7 text-gray-700 sm:text-[17px] sm:leading-8">
             <p className="font-serif italic">
               For me, curiosity doesn't end when I step away from my computer.
               It's something that naturally finds its way into many parts of my
